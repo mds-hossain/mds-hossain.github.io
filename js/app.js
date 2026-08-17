@@ -5,6 +5,8 @@
 // complete site DOM.
 // Note: data/organizations.js provides window.LEADERSHIP (unified
 // leadership roles + organization memberships, impact-ordered).
+// Assets: upload your logo as assets/logo.jpg and a portrait as
+// assets/profile.jpg - both are picked up automatically.
 // ============================================================
 
 (function () {
@@ -60,8 +62,9 @@
       `<header class="topbar">
         <div class="wrap topbar-inner">
           <a class="brand" href="#">
-            <span class="brand-mark">MS</span>
-            <span>mds-hossain</span>
+            <img src="assets/logo.jpg" alt="shakhawat" class="brand-logo-img"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+            <span class="brand-logo-text" style="display:none;">shakhawat<span class="accent">&#8599;</span></span>
           </a>
           <div class="top-actions">
             <button class="control-btn" id="lang-btn" onclick="toggleLang()"></button>
@@ -117,8 +120,19 @@
 
   // ── HERO ───────────────────────────────────────────────
   function buildHero() {
+    const kpis = [1, 2, 3, 4]
+      .map(
+        (i) => `
+        <div class="metric">
+          <strong>${t("hero_m" + i + "_val")}</strong>
+          <span class="m-lbl">${t("hero_m" + i + "_lbl")}</span>
+          <span class="m-sub">${t("hero_m" + i + "_sub")}</span>
+        </div>`
+      )
+      .join("");
     return `
     <section class="hero" id="top">
+      <div class="hero-photo" aria-hidden="true"></div>
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-left">
@@ -134,11 +148,7 @@
               <a href="#experience" class="btn secondary">${t("hero_btn2")}</a>
               <a href="https://github.com/mds-hossain" target="_blank" rel="noopener" class="btn secondary">${t("hero_btn3")}</a>
             </div>
-            <div class="hero-metrics">
-              <div class="metric"><strong>${t("hero_m1_val")}</strong><span>${t("hero_m1_lbl")}</span></div>
-              <div class="metric"><strong>${t("hero_m2_val")}</strong><span>${t("hero_m2_lbl")}</span></div>
-              <div class="metric"><strong>${t("hero_m3_val")}</strong><span>${t("hero_m3_lbl")}</span></div>
-            </div>
+            <div class="hero-metrics">${kpis}</div>
           </div>
           <div class="hero-right">
             <div class="hero-card">
@@ -275,7 +285,7 @@
         <div class="venue">${t("pub_venue")}</div>
         <h3>${t("pub_title")}</h3>
         <p>${t("pub_desc")}</p>
-        <a href="https://doi.org/10.1007/978-3-031-60611-3_19" target="_blank" rel="noopener">${t("pub_link")} ↗</a>
+        <a href="https://doi.org/10.21428/bf6fb269.67a8d057" target="_blank" rel="noopener">${t("pub_link")} ↗</a>
         ${tags(["HCI","Sustainability","Education","Global Design","Capitalocene"])}
       </div>`,
       true
@@ -352,9 +362,12 @@
   // ── CONTACT ────────────────────────────────────────────
   function buildContact() {
     const items = [
-      { label: "Email", val: "mds.hossain@outlook.com", href: "mailto:mds.hossain@outlook.com" },
+      { label: "Email", val: "shakhawat@europe.com", href: "mailto:shakhawat@europe.com" },
+      { label: "Website", val: "shossain.xyz", href: "https://shossain.xyz" },
       { label: "LinkedIn", val: "linkedin.com/in/mds-hossain", href: "https://www.linkedin.com/in/mds-hossain/" },
       { label: "GitHub", val: "github.com/mds-hossain", href: "https://github.com/mds-hossain" },
+      { label: "ORCID", val: "0009-0009-8725-6060", href: "https://orcid.org/0009-0009-8725-6060" },
+      { label: "Xing", val: "MdShakhawat_Hossain3", href: "https://www.xing.com/profile/MdShakhawat_Hossain3" },
       { label: "Location", val: t("contact_location"), href: null },
       { label: "Status", val: t("contact_status"), href: null },
     ];
@@ -379,7 +392,8 @@
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
           <a href="https://github.com/mds-hossain" target="_blank" rel="noopener" class="site-link">GitHub ↗</a>
           <a href="https://www.linkedin.com/in/mds-hossain/" target="_blank" rel="noopener" class="site-link">LinkedIn ↗</a>
-          <a href="https://doi.org/10.1007/978-3-031-60611-3_19" target="_blank" rel="noopener" class="site-link">Publication ↗</a>
+          <a href="https://orcid.org/0009-0009-8725-6060" target="_blank" rel="noopener" class="site-link">ORCID ↗</a>
+          <a href="https://www.xing.com/profile/MdShakhawat_Hossain3" target="_blank" rel="noopener" class="site-link">Xing ↗</a>
         </div>
       </div>
     </footer>`;
