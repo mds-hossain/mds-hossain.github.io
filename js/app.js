@@ -5,8 +5,8 @@
 // complete site DOM.
 // Note: data/organizations.js provides window.LEADERSHIP (unified
 // leadership roles + organization memberships, impact-ordered).
-// Assets: hero portrait loads assets/profile.jpg; if you upload a
-// transparent cutout as assets/profile.png it is used instead.
+// Assets: hero portrait loads assets/profile.png (transparent
+// cutout); falls back to assets/profile.jpg if missing.
 // Topbar logo: upload assets/logo.jpg to replace the text logo.
 // ============================================================
 
@@ -161,8 +161,8 @@
           <div class="hero-right">
             <div class="portrait-wrap">
               <div class="portrait-bg" aria-hidden="true"></div>
-              <img class="portrait-img" src="assets/profile.jpg" alt="Md Shakhawat Hossain"
-                   onerror="if(!this.dataset.png){this.dataset.png=1;this.src='assets/profile.png';}else{this.closest('.portrait-wrap').style.display='none';}">
+              <img class="portrait-img" src="assets/profile.png" alt="Md Shakhawat Hossain"
+                   onerror="if(!this.dataset.jpg){this.dataset.jpg=1;this.src='assets/profile.jpg';this.classList.add('is-photo');}else{this.closest('.portrait-wrap').style.display='none';}">
             </div>
           </div>
         </div>
