@@ -1,9 +1,10 @@
 // ============================================================
 // APP.JS - Main application logic
 // Reads TRANSLATIONS, EXPERIENCE, EDUCATION, CERTIFICATIONS,
-// PROJECTS, AWARDS, VOLUNTEERING, ORGANIZATIONS from data/*.js
-// and renders the complete site DOM.
-// Note: ORGANIZATIONS data is rendered inside the Leadership section.
+// PROJECTS, AWARDS, VOLUNTEERING from data/*.js and renders the
+// complete site DOM.
+// Note: data/organizations.js provides window.LEADERSHIP (unified
+// leadership roles + organization memberships, impact-ordered).
 // ============================================================
 
 (function () {
@@ -281,51 +282,20 @@
     );
   }
 
-  // ── LEADERSHIP (includes Organizations) ────────────────
+  // ── LEADERSHIP (unified: roles + organizations) ────────
   function buildLeadership() {
-    const ldrCards = [
-      {
-        icon: "🌐",
-        title: t("ldr1_title"),
-        org: t("ldr1_org"),
-        desc: t("ldr1_desc"),
-        tags: ["MUN","UN SDGs","Leadership","International","Diplomacy"],
-      },
-      {
-        icon: "🏛️",
-        title: t("ldr2_title"),
-        org: t("ldr2_org"),
-        desc: t("ldr2_desc"),
-        tags: ["MUN","Best Delegate","Macao","ECOSOC"],
-      },
-    ]
-      .map(
-        (item) => `
-        <div class="card">
-          <div class="card-icon">${item.icon}</div>
-          <h3>${item.title}</h3>
-          <div class="org-label">${item.org}</div>
-          <p class="card-desc">${item.desc}</p>
-          ${tags(item.tags)}
-        </div>`
-      )
-      .join("");
-    const orgCards = ORGANIZATIONS.map(
-      (o) => `
+    const cards = LEADERSHIP.map(
+      (item) => `
       <div class="card">
-        <div class="card-icon">${o.icon}</div>
-        <h3>${o.role[lang] || o.role.en}</h3>
-        <div class="org-label">${o.name}</div>
-        <div class="period-label">${o.period}</div>
-        <p class="card-desc">${o.desc[lang] || o.desc.en}</p>
+        <div class="card-icon">${item.icon}</div>
+        <h3>${item.title[lang] || item.title.en}</h3>
+        <div class="org-label">${item.org}</div>
+        <div class="period-label">${item.period}</div>
+        <p class="card-desc">${item.desc[lang] || item.desc.en}</p>
+        ${tags(item.tags)}
       </div>`
     ).join("");
-    return sec(
-      "leadership",
-      `<div class="grid-2" style="margin-bottom:2.2rem;">${ldrCards}</div>
-       <h3 style="font-size:1.05rem;letter-spacing:-0.02em;margin-bottom:1rem;">${t("ldr_orgs_heading")}</h3>
-       <div class="grid-3">${orgCards}</div>`
-    );
+    return sec("leadership", `<div class="grid-3">${cards}</div>`);
   }
 
   // ── VOLUNTEERING ───────────────────────────────────────

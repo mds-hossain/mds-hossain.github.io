@@ -2,6 +2,8 @@
 // TRANSLATIONS FILE
 // All static UI strings in English and German.
 // To update a label: find the key below and edit both 'en' and 'de'.
+// Note: Leadership section content lives in data/organizations.js
+// (window.LEADERSHIP), not here.
 // ============================================================
 
 window.TRANSLATIONS = {
@@ -112,15 +114,6 @@ window.TRANSLATIONS = {
     skill5_desc:  "Qualitative and quantitative research, user interviews, data analysis, journey mapping, and persona development.",
     skill6_title: "Languages",
     skill6_desc:  "Multilingual professional enabling effective cross-cultural collaboration in Germany and internationally.",
-
-    // --- LEADERSHIP ---
-    ldr1_title: "Director, Model United Nations Program",
-    ldr1_org:   "International Global Network (Jan 2018 - Dec 2019)",
-    ldr1_desc:  "Directed academic operations for large-scale international MUN conferences on UN SDG Goals. Editor in Chief at AWMUN Bali 2019, Speaker at International Youth Symposium Malaysia 2018, Chairperson at Global Goals MUN Malaysia 2018, Director at Asia World MUN South Korea 2018.",
-    ldr2_title: "Vice Minister, MUNA UMSU",
-    ldr2_org:   "Model United Nations Association of University of Macau (Aug 2017 - Apr 2018)",
-    ldr2_desc:  "Directed academic operations and logistics for UN simulations. Director General at UMMUNC 2018, Dais Head UN ECOSOC at EAMUNC 2018, Best Delegate at UMMUNC 2016.",
-    ldr_orgs_heading: "Organizations and Memberships",
 
     // --- LANGUAGES ---
     lang1: "Bengali",    lang1_level: "First language",
@@ -243,15 +236,6 @@ window.TRANSLATIONS = {
     skill5_desc:  "Qualitative und quantitative Forschung, Nutzerinterviews, Datenanalyse, Journey Mapping und Persona-Entwicklung.",
     skill6_title: "Sprachen",
     skill6_desc:  "Mehrsprachiger Fachmann fuer effektive interkulturelle Zusammenarbeit in Deutschland und international.",
-
-    // --- LEADERSHIP ---
-    ldr1_title: "Direktor, Model United Nations Programm",
-    ldr1_org:   "International Global Network (Jan 2018 - Dez 2019)",
-    ldr1_desc:  "Akademische Aktivitaeten fuer grosse internationale MUN-Konferenzen zu UN SDG-Zielen geleitet. Chefredakteur bei AWMUN Bali 2019, Redner beim Internationalen Jugendsymposium Malaysia 2018, Vorsitzender bei Global Goals MUN Malaysia 2018, Direktor bei Asia World MUN Suedkorea 2018.",
-    ldr2_title: "Vizeminister, MUNA UMSU",
-    ldr2_org:   "Model United Nations Association der Universitaet Macao (Aug 2017 - Apr 2018)",
-    ldr2_desc:  "Akademische Aktivitaeten und Logistik fuer UN-Simulationen geleitet. Generaldirektor bei UMMUNC 2018, Dais-Leiter UN ECOSOC bei EAMUNC 2018, Bester Delegierter bei UMMUNC 2016.",
-    ldr_orgs_heading: "Organisationen und Mitgliedschaften",
 
     // --- LANGUAGES ---
     lang1: "Bengalisch",  lang1_level: "Muttersprache",
