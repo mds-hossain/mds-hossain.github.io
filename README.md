@@ -50,6 +50,6 @@ Each `data/*.js` file has clear comments. Find the entry, edit it, push.
 
 ## Contact
 
-mds.hossain@outlook.com
+
 https://www.linkedin.com/in/mds-hossain/
 https://github.com/mds-hossain
