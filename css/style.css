@@ -74,7 +74,7 @@ a{color:inherit;text-decoration:none;}
 img{max-width:100%;display:block;}
 
 /* 3. LAYOUT */
-.wrap{width:min(1180px,calc(100% - 2rem));margin:0 auto;position:relative;z-index:1;}
+.wrap{width:min(1280px,calc(100% - 2rem));margin:0 auto;position:relative;z-index:1;}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
 
@@ -91,13 +91,14 @@ img{max-width:100%;display:block;}
 .control-btn{min-width:74px;font-size:0.84rem;}
 #lang-btn{min-width:56px;border-radius:999px;border-color:color-mix(in srgb,var(--accent) 45%,var(--line-2));background:var(--tag-bg);color:var(--tag-text);font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:0.1em;font-size:0.8rem;}
 #lang-btn:hover{border-color:var(--accent);}
-.menu-btn{width:46px;padding:0;position:relative;}
-.menu-btn .bars,.menu-btn .bars::before,.menu-btn .bars::after{content:"";width:18px;height:2px;background:var(--text);border-radius:4px;position:absolute;transition:0.25s ease;}
-.menu-btn .bars::before{transform:translateY(-6px);}
-.menu-btn .bars::after{transform:translateY(6px);}
+.menu-btn{gap:0.5rem;padding:0 0.9rem;}
+.menu-btn .bars,.menu-btn .bars::before,.menu-btn .bars::after{content:"";width:16px;height:2px;background:var(--text);border-radius:4px;position:relative;display:block;transition:0.25s ease;}
+.menu-btn .bars::before{position:absolute;transform:translateY(-5px);}
+.menu-btn .bars::after{position:absolute;transform:translateY(5px);}
 .menu-btn.active .bars{background:transparent;}
 .menu-btn.active .bars::before{transform:rotate(45deg);}
 .menu-btn.active .bars::after{transform:rotate(-45deg);}
+.menu-label{font-size:0.84rem;font-weight:600;}
 .drawer{position:fixed;top:72px;right:1rem;width:min(340px,calc(100vw - 2rem));background:var(--panel-strong);border:1px solid var(--line-2);border-radius:20px;box-shadow:var(--shadow);padding:1.1rem;z-index:199;opacity:0;transform:translateY(-10px);pointer-events:none;transition:0.25s ease;max-height:calc(100vh - 90px);overflow-y:auto;}
 .drawer.open{opacity:1;transform:translateY(0);pointer-events:auto;}
 .drawer-title{font-size:0.76rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted-2);margin-bottom:1rem;font-family:'JetBrains Mono',monospace;}
@@ -138,6 +139,28 @@ img{max-width:100%;display:block;}
 .portrait-img.is-photo{object-fit:cover;object-position:center 16%;width:100%;height:auto;aspect-ratio:3/4;border-radius:30px;opacity:0.94;box-shadow:var(--shadow);filter:none;
   -webkit-mask-image:radial-gradient(ellipse 88% 86% at 50% 46%,black 55%,transparent 98%);
   mask-image:radial-gradient(ellipse 88% 86% at 50% 46%,black 55%,transparent 98%);}
+
+/* 5d. SCROLL HINT - mouse icon + animated chevrons, fades on scroll */
+.scroll-hint{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.4rem;z-index:50;transition:opacity 0.4s ease;pointer-events:none;}
+.scroll-hint.hidden{opacity:0;}
+.mouse{width:26px;height:42px;border:2px solid var(--muted-2);border-radius:14px;display:flex;justify-content:center;padding-top:7px;}
+.mouse-dot{width:4px;height:8px;border-radius:4px;background:var(--accent-2);animation:mouseScroll 1.8s ease-in-out infinite;}
+@keyframes mouseScroll{0%{transform:translateY(0);opacity:1;}70%{transform:translateY(12px);opacity:0;}100%{transform:translateY(0);opacity:0;}}
+.chevrons{display:flex;flex-direction:column;align-items:center;gap:1px;}
+.chevrons span{width:10px;height:10px;border-right:2px solid var(--accent-2);border-bottom:2px solid var(--accent-2);transform:rotate(45deg);animation:chevFade 1.8s ease-in-out infinite;}
+.chevrons span:nth-child(2){animation-delay:0.15s;}
+.chevrons span:nth-child(3){animation-delay:0.3s;}
+@keyframes chevFade{0%,100%{opacity:0.15;}50%{opacity:1;}}
+.scroll-hint-text{font-size:0.7rem;font-family:'JetBrains Mono',monospace;color:var(--muted-2);letter-spacing:0.08em;}
+
+/* 5e. BACK TO TOP - progress ring fills as you scroll */
+.totop{position:fixed;bottom:2rem;right:2rem;width:52px;height:52px;border-radius:50%;border:none;background:var(--panel-strong);box-shadow:var(--shadow);cursor:pointer;z-index:150;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity 0.3s ease,transform 0.3s ease;}
+.totop.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+.totop svg{position:absolute;inset:0;transform:rotate(-90deg);}
+.totop-track{fill:none;stroke:var(--line-2);stroke-width:2.5;}
+.totop-ring{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;transition:stroke-dashoffset 0.1s linear;}
+.totop-arrow{font-size:1.1rem;color:var(--text);position:relative;z-index:1;}
+.totop:hover{border-color:var(--accent);}
 
 /* 6. SECTIONS */
 section{padding:80px 0;}
@@ -205,7 +228,18 @@ section{padding:80px 0;}
 footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted-2);font-size:0.83rem;}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 
-/* 14. RESPONSIVE */
+/* 14. WIDE SCREENS - scale hero up so it doesn't look lost */
+@media(min-width:1440px){
+  .wrap{width:min(1360px,calc(100% - 3rem));}
+  .hero h1{font-size:clamp(2.4rem,3.8vw,4.2rem);}
+  .hero p.lead{font-size:1.1rem;}
+  .metric strong{font-size:2.1rem;}
+  .metric .m-lbl{font-size:1rem;}
+  .metric .m-sub{font-size:0.85rem;}
+  .portrait-wrap{max-width:480px;}
+}
+
+/* 15. RESPONSIVE */
 @media(max-width:860px){
   .hero-grid{grid-template-columns:1fr;}
   .hero-metrics{grid-template-columns:repeat(2,1fr);margin-top:2.5rem;}
@@ -213,6 +247,8 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted-2);font
   .hero-right{height:auto;min-height:0;}
   .portrait-wrap{position:relative;height:auto;max-width:340px;margin:0 auto;pointer-events:auto;}
   .portrait-img{width:100%;height:auto;aspect-ratio:3/4;}
+  .scroll-hint{display:none;}
+  .totop{bottom:1.25rem;right:1.25rem;width:46px;height:46px;}
 }
 @media(max-width:520px){
   .hero-metrics{grid-template-columns:repeat(2,1fr);}

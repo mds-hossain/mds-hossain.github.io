@@ -78,7 +78,7 @@
             <button class="control-btn" id="lang-btn" onclick="toggleLang()"></button>
             <button class="control-btn" id="theme-btn" onclick="toggleTheme()"></button>
             <button class="menu-btn" id="menu-btn" onclick="toggleDrawer()" aria-label="Menu">
-              <span class="bars"></span>
+              <span class="bars"></span><span class="menu-label">${t("ui_menu")}</span>
             </button>
           </div>
         </div>
@@ -126,6 +126,43 @@
       closeDrawer();
     }
   });
+
+  // ── SCROLL UI: indicator + back-to-top progress ring ───
+  function buildScrollUI() {
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      `<div class="scroll-hint" id="scroll-hint" aria-hidden="true">
+        <div class="mouse"><span class="mouse-dot"></span></div>
+        <div class="chevrons"><span></span><span></span><span></span></div>
+        <div class="scroll-hint-text">${t("hero_scroll")}</div>
+      </div>
+      <button class="totop" id="totop" aria-label="${t("ui_backtotop")}" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg viewBox="0 0 44 44" width="44" height="44">
+          <circle class="totop-track" cx="22" cy="22" r="19"></circle>
+          <circle class="totop-ring" id="totop-ring" cx="22" cy="22" r="19"></circle>
+        </svg>
+        <span class="totop-arrow">&#8593;</span>
+      </button>`
+    );
+
+    const hint = $("#scroll-hint");
+    const totop = $("#totop");
+    const ring = $("#totop-ring");
+    const CIRC = 2 * Math.PI * 19; // r=19
+    ring.style.strokeDasharray = CIRC;
+    ring.style.strokeDashoffset = CIRC;
+
+    function onScroll() {
+      const y = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(y / max, 1) : 0;
+      ring.style.strokeDashoffset = CIRC * (1 - pct);
+      if (hint) hint.classList.toggle("hidden", y > 60);
+      totop.classList.toggle("visible", y > window.innerHeight * 0.5);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 
   // ── HERO ───────────────────────────────────────────────
   function buildHero() {
@@ -451,6 +488,7 @@
     );
     buildTopbar();
     build();
+    buildScrollUI();
   }
 
   document.addEventListener("DOMContentLoaded", init);

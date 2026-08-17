@@ -43,6 +43,7 @@ window.TRANSLATIONS = {
     hero_btn1:      "Get in touch",
     hero_btn2:      "View experience",
     hero_btn3:      "GitHub",
+    hero_scroll:    "Scroll to explore",
     hero_m1_val:    "21+",
     hero_m1_lbl:    "Projects",
     hero_m1_sub:    "B2B, enterprise, and academics",
@@ -64,6 +65,10 @@ window.TRANSLATIONS = {
     hero_card_f2s:    "12+ dashboard and web views",
     hero_card_f3b:    "Generative AI Integration",
     hero_card_f3s:    "30% faster prototyping delivery",
+
+    // --- UI ---
+    ui_menu:      "Menu",
+    ui_backtotop: "Back to top",
 
     // --- SECTION TITLES ---
     sec_experience_label:     "Career",
@@ -170,6 +175,7 @@ window.TRANSLATIONS = {
     hero_btn1:      "Kontakt aufnehmen",
     hero_btn2:      "Erfahrung ansehen",
     hero_btn3:      "GitHub",
+    hero_scroll:    "Scrollen zum Entdecken",
     hero_m1_val:    "21+",
     hero_m1_lbl:    "Projekte",
     hero_m1_sub:    "B2B, Enterprise und akademisch",
@@ -191,6 +197,10 @@ window.TRANSLATIONS = {
     hero_card_f2s:    "12+ Dashboard- und Webansichten",
     hero_card_f3b:    "Generative KI-Integration",
     hero_card_f3s:    "30% schnellere Prototypenlieferung",
+
+    // --- UI ---
+    ui_menu:      "Menue",
+    ui_backtotop: "Nach oben",
 
     // --- SECTION TITLES ---
     sec_experience_label:     "Karriere",
