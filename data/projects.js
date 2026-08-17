@@ -14,7 +14,7 @@ window.PROJECTS = [
       en: "Enterprise SaaS platform replacing fragmented spreadsheets with a centralized system for hotel bookings, room allocations, employee check-in/out, financial tracking, and automated reporting. Designed and tested end-to-end.",
       de: "Enterprise-SaaS-Plattform, die fragmentierte Tabellen durch ein zentrales System fuer Hotelbuchungen, Zimmerzuteilungen, Mitarbeiter-Check-in/out, Finanzverfolgung und automatisierte Berichte ersetzt."
     },
-    link: null,
+    link: "https://shossain.xyz/project/eurotrack",
     tags: ["SaaS", "UX Design", "QA", "Enterprise", "Playwright"]
   },
 
@@ -27,7 +27,7 @@ window.PROJECTS = [
       en: "Complete UX overhaul of Moodle LMS including user research, wireframing, prototyping, and usability testing. Addressed dashboard structure, course navigation, content layout, communication tools, and mobile responsiveness.",
       de: "Vollstaendige UX-Ueberarbeitung des Moodle-LMS einschliesslich Nutzerforschung, Wireframing, Prototyping und Usability-Tests. Dashboard-Struktur, Kursnavigation, Inhaltslayout und mobile Reaktionsfaehigkeit verbessert."
     },
-    link: null,
+    link: "https://shossain.xyz/project/redesigning-moodle",
     tags: ["UX Research", "Figma", "Usability Testing", "Accessibility", "Moodle"]
   },
 
@@ -40,7 +40,7 @@ window.PROJECTS = [
       en: "Mobile app using design thinking to facilitate transparent and trusted pet adoption from verified shelters and registered breeders only. Full iterative DT process: understand, observe, POV, ideation, prototype, and testing.",
       de: "Mobile App mit Design-Thinking-Ansatz fuer transparente und vertrauenswuerdige Tiervermittlung ausschliesslich von verifizierten Tierheimen und registrierten Zuchtern."
     },
-    link: null,
+    link: "https://shossain.xyz/project/paw-tinder",
     tags: ["Design Thinking", "Mobile UX", "Prototyping", "User Testing"]
   },
 
@@ -53,7 +53,7 @@ window.PROJECTS = [
       en: "Voice interaction agent using psychological approaches to design utterances for teaching pasta cooking skills. Research focus on conversational UX and social interaction design in human-agent dialogue.",
       de: "Sprachinteraktionsagent mit psychologischem Ansatz zur Gestaltung von Aeusserungen fuer Pasta-Kochunterricht. Forschungsfokus auf konversationellem UX und sozialem Interaktionsdesign."
     },
-    link: null,
+    link: "https://shossain.xyz/project/chef-antonio",
     tags: ["Conversational UX", "Voice UI", "HCI", "AI Agent"]
   },
 

@@ -69,6 +69,7 @@ window.TRANSLATIONS = {
     // --- UI ---
     ui_menu:      "Menu",
     ui_backtotop: "Back to top",
+    link_view:    "View case study",
 
     // --- SECTION TITLES ---
     sec_experience_label:     "Career",
@@ -201,6 +202,7 @@ window.TRANSLATIONS = {
     // --- UI ---
     ui_menu:      "Menue",
     ui_backtotop: "Nach oben",
+    link_view:    "Case Study ansehen",
 
     // --- SECTION TITLES ---
     sec_experience_label:     "Karriere",

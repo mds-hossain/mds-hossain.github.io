@@ -293,7 +293,7 @@
         <h3>${p.title[lang] || p.title.en}</h3>
         <p class="card-desc">${p.desc[lang] || p.desc.en}</p>
         ${tags(p.tags)}
-        ${p.link ? `<div style="margin-top:0.75rem;"><a href="${p.link}" target="_blank" rel="noopener" class="site-link">View on GitHub ↗</a></div>` : ""}
+        ${p.link ? `<div style="margin-top:0.75rem;"><a href="${p.link}" target="_blank" rel="noopener" class="site-link">${t("link_view")} ↗</a></div>` : ""}
       </div>`
     ).join("");
     return sec("projects", `<div class="grid-2">${cards}</div>`, true);
