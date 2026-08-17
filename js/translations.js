@@ -1,2 +1,277 @@
-// Full translations restored with literal 360° KPI value, complete EN/DE navigation, hero, section, publication, skills, language, contact, and footer keys.
-window.TRANSLATIONS={en:{hero_m3_val:'360°',hero_h1a:'Shakhawat Hossain',hero_h1b:'Shuvoraj',hero_scroll:'Scroll to explore',ui_menu:'Menu',ui_backtotop:'Back to top',link_view:'View case study'},de:{hero_m3_val:'360°',hero_h1a:'Shakhawat Hossain',hero_h1b:'Shuvoraj',hero_scroll:'Scrollen zum Entdecken',ui_menu:'Menue',ui_backtotop:'Nach oben',link_view:'Case Study ansehen'}};
+// ============================================================
+// TRANSLATIONS FILE
+// All static UI strings in English and German.
+// To update a label: find the key below and edit both 'en' and 'de'.
+// Note: Leadership section content lives in data/organizations.js
+// (window.LEADERSHIP), not here.
+// ============================================================
+
+window.TRANSLATIONS = {
+
+  en: {
+    // --- NAV ---
+    nav_experience:     "Experience",
+    nav_education:      "Education",
+    nav_skills:         "Skills",
+    nav_projects:       "Projects",
+    nav_certifications: "Certifications",
+    nav_publication:    "Publication",
+    nav_leadership:     "Leadership",
+    nav_volunteering:   "Volunteering",
+    nav_awards:         "Awards",
+    nav_languages:      "Languages",
+    nav_contact:        "Contact",
+
+    // --- NAV LABELS ---
+    nav_lbl_experience:     "Work",
+    nav_lbl_education:      "Study",
+    nav_lbl_skills:         "Tech",
+    nav_lbl_projects:       "Build",
+    nav_lbl_certifications: "Certs",
+    nav_lbl_publication:    "Research",
+    nav_lbl_leadership:     "ECA",
+    nav_lbl_volunteering:   "Give back",
+    nav_lbl_awards:         "Honours",
+    nav_lbl_languages:      "Speak",
+    nav_lbl_contact:        "Get in touch",
+
+    // --- HERO ---
+    hero_eyebrow:   "Available for opportunities",
+    hero_h1a:       "Shakhawat Hossain",
+    hero_h1b:       "Shuvoraj",
+    hero_lead:      "Software QA and UX Engineer with a research background in Human-Computer Interaction and AI. Building reliable, user-centered digital products across Germany and beyond.",
+    hero_btn1:      "Get in touch",
+    hero_btn2:      "View experience",
+    hero_btn3:      "GitHub",
+    hero_scroll:    "Scroll to explore",
+    hero_m1_val:    "21+",
+    hero_m1_lbl:    "Projects",
+    hero_m1_sub:    "B2B, enterprise, and academics",
+    hero_m2_val:    "4",
+    hero_m2_lbl:    "Core Areas",
+    hero_m2_sub:    "Applied AI, QA, UX, and Web",
+    hero_m3_val:    "360\u00b0",
+    hero_m3_lbl:    "User-Centric",
+    hero_m3_sub:    "Integrating intelligent AI with HCD",
+    hero_m4_val:    "7+",
+    hero_m4_lbl:    "Countries",
+    hero_m4_sub:    "Lived, studied, and worked globally",
+    hero_card_period: "Jan 2026 - Present",
+    hero_card_role:   "Applied AI and Test Engineer",
+    hero_card_org:    "EUROPAS GmbH - Germany, On-site",
+    hero_card_f1b:    "AI-assisted E2E Testing",
+    hero_card_f1s:    "Playwright, automated test lifecycle",
+    hero_card_f2b:    "UX/UI Design",
+    hero_card_f2s:    "12+ dashboard and web views",
+    hero_card_f3b:    "Generative AI Integration",
+    hero_card_f3s:    "30% faster prototyping delivery",
+
+    // --- UI ---
+    ui_menu:      "Menu",
+    ui_backtotop: "Back to top",
+    link_view:    "View case study",
+
+    // --- SECTION TITLES ---
+    sec_experience_label:     "Career",
+    sec_experience_title:     "Work Experience",
+    sec_experience_sub:       "A track record across QA engineering, UX design, and research roles in Germany, Macao, and remotely.",
+    sec_education_label:      "Academic",
+    sec_education_title:      "Education",
+    sec_education_sub:        "Interdisciplinary academic background spanning computer science, HCI, and international information systems.",
+    sec_skills_label:         "Expertise",
+    sec_skills_title:         "Skills",
+    sec_skills_sub:           "Technical and research skills built across QA engineering, UX design, and human-AI interaction.",
+    sec_projects_label:       "Work",
+    sec_projects_title:       "Projects",
+    sec_projects_sub:         "Selected projects spanning enterprise SaaS, UX redesign, mobile apps, and conversational AI.",
+    sec_certifications_label: "Credentials",
+    sec_certifications_title: "Certifications",
+    sec_certifications_sub:   "Continuously upskilling across AI, testing, UX, agile, and digital strategy.",
+    sec_publication_label:    "Research",
+    sec_publication_title:    "Publication",
+    sec_publication_sub:      "Peer-reviewed research at the intersection of HCI, sustainability, and global design education.",
+    sec_leadership_label:     "Beyond Work",
+    sec_leadership_title:     "Leadership and ECA",
+    sec_leadership_sub:       "International leadership, MUN conferences, professional memberships, and community contribution across five continents.",
+    sec_volunteering_label:   "Community",
+    sec_volunteering_title:   "Volunteering",
+    sec_volunteering_sub:     "Giving back through open knowledge, disability support, global youth programs, and cultural exchange.",
+    sec_awards_label:         "Honours",
+    sec_awards_title:         "Awards and Honours",
+    sec_awards_sub:           "Recognition across academic excellence, leadership, and international contribution.",
+    sec_languages_label:      "Speak",
+    sec_languages_title:      "Languages",
+    sec_languages_sub:        "Multilingual communicator with professional fluency across five languages.",
+    sec_contact_label:        "Connect",
+    sec_contact_title:        "Get in Touch",
+    sec_contact_sub:          "Open to QA engineering, UX research, and HCAI roles across Germany and internationally.",
+
+    // --- PUBLICATION ---
+    pub_venue:  "HCI International 2024 - Conference Proceedings",
+    pub_title:  "HCI's Role in the Capitalocene - Lessons Learned from an HCI Master Course Across the Globe",
+    pub_desc:   "This paper examines how HCI education can address the Capitalocene by embedding sustainability, ethics, and global perspectives into HCI master courses. Drawing on cross-institutional teaching experiences across multiple countries, it presents lessons learned and design recommendations for future HCI curricula.",
+    pub_link:   "View on DOI: 10.21428/bf6fb269.67a8d057",
+
+    // --- SKILLS ---
+    skill1_title: "QA and Testing",
+    skill1_desc:  "End-to-end testing, manual, exploratory, regression, UAT, API testing, test management, and defect lifecycle.",
+    skill2_title: "UX and UI Design",
+    skill2_desc:  "User research, wireframing, prototyping, usability testing, interaction design, and human-centered design.",
+    skill3_title: "AI and Research",
+    skill3_desc:  "HCAI research, generative AI integration, AI-assisted testing, responsible AI, and human-AI interaction design.",
+    skill4_title: "DevOps and Dev",
+    skill4_desc:  "CI/CD pipelines, Linux environments, RPA workflows, front-end development, and DevSecOps processes.",
+    skill5_title: "Research and Analysis",
+    skill5_desc:  "Qualitative and quantitative research, user interviews, data analysis, journey mapping, and persona development.",
+    skill6_title: "Languages",
+    skill6_desc:  "Multilingual professional enabling effective cross-cultural collaboration in Germany and internationally.",
+
+    // --- LANGUAGES ---
+    lang1: "Bengali",    lang1_level: "First language",
+    lang2: "English",    lang2_level: "Fluent - IELTS Certified",
+    lang3: "German",     lang3_level: "Intermediate - B2",
+    lang4: "Chinese",    lang4_level: "Basic",
+    lang5: "Portuguese", lang5_level: "Basic",
+
+    // --- CONTACT ---
+    contact_status: "Open to opportunities",
+    contact_location: "Germany",
+
+    // --- FOOTER ---
+    footer_name: "Shakhawat Hossain Shuvoraj - Software QA and UX Engineer"
+  },
+
+  de: {
+    // --- NAV ---
+    nav_experience:     "Berufserfahrung",
+    nav_education:      "Bildung",
+    nav_skills:         "Faehigkeiten",
+    nav_projects:       "Projekte",
+    nav_certifications: "Zertifikate",
+    nav_publication:    "Publikation",
+    nav_leadership:     "Fuehrung",
+    nav_volunteering:   "Ehrenamt",
+    nav_awards:         "Auszeichnungen",
+    nav_languages:      "Sprachen",
+    nav_contact:        "Kontakt",
+
+    // --- NAV LABELS ---
+    nav_lbl_experience:     "Arbeit",
+    nav_lbl_education:      "Studium",
+    nav_lbl_skills:         "Technik",
+    nav_lbl_projects:       "Projekte",
+    nav_lbl_certifications: "Zertifikate",
+    nav_lbl_publication:    "Forschung",
+    nav_lbl_leadership:     "ECA",
+    nav_lbl_volunteering:   "Ehrenamt",
+    nav_lbl_awards:         "Ehrungen",
+    nav_lbl_languages:      "Sprachen",
+    nav_lbl_contact:        "Kontakt",
+
+    // --- HERO ---
+    hero_eyebrow:   "Offen fuer neue Moeglichkeiten",
+    hero_h1a:       "Shakhawat Hossain",
+    hero_h1b:       "Shuvoraj",
+    hero_lead:      "Software QA- und UX-Ingenieur mit Forschungshintergrund in Mensch-Computer-Interaktion und KI. Entwicklung zuverlaessiger, nutzerzentrierter digitaler Produkte in Deutschland und weltweit.",
+    hero_btn1:      "Kontakt aufnehmen",
+    hero_btn2:      "Erfahrung ansehen",
+    hero_btn3:      "GitHub",
+    hero_scroll:    "Scrollen zum Entdecken",
+    hero_m1_val:    "21+",
+    hero_m1_lbl:    "Projekte",
+    hero_m1_sub:    "B2B, Enterprise und akademisch",
+    hero_m2_val:    "4",
+    hero_m2_lbl:    "Kernbereiche",
+    hero_m2_sub:    "Applied AI, QA, UX und Web",
+    hero_m3_val:    "360\u00b0",
+    hero_m3_lbl:    "Nutzerzentriert",
+    hero_m3_sub:    "Intelligente KI trifft HCD",
+    hero_m4_val:    "7+",
+    hero_m4_lbl:    "Laender",
+    hero_m4_sub:    "Global gelebt, studiert und gearbeitet",
+    hero_card_period: "Jan 2026 - Heute",
+    hero_card_role:   "Applied AI und Test Engineer",
+    hero_card_org:    "EUROPAS GmbH - Deutschland, Vor Ort",
+    hero_card_f1b:    "KI-gestuetztes E2E-Testing",
+    hero_card_f1s:    "Playwright, automatisierter Testlebenszyklus",
+    hero_card_f2b:    "UX/UI-Design",
+    hero_card_f2s:    "12+ Dashboard- und Webansichten",
+    hero_card_f3b:    "Generative KI-Integration",
+    hero_card_f3s:    "30% schnellere Prototypenlieferung",
+
+    // --- UI ---
+    ui_menu:      "Menue",
+    ui_backtotop: "Nach oben",
+    link_view:    "Case Study ansehen",
+
+    // --- SECTION TITLES ---
+    sec_experience_label:     "Karriere",
+    sec_experience_title:     "Berufserfahrung",
+    sec_experience_sub:       "Eine Erfolgsgeschichte in QA-Engineering, UX-Design und Forschungsrollen in Deutschland, Macao und remote.",
+    sec_education_label:      "Akademisch",
+    sec_education_title:      "Bildung",
+    sec_education_sub:        "Interdisziplinaerer akademischer Hintergrund in Informatik, HCI und internationalen Informationssystemen.",
+    sec_skills_label:         "Expertise",
+    sec_skills_title:         "Faehigkeiten",
+    sec_skills_sub:           "Technische und Forschungskompetenzen in QA-Engineering, UX-Design und Mensch-KI-Interaktion.",
+    sec_projects_label:       "Arbeit",
+    sec_projects_title:       "Projekte",
+    sec_projects_sub:         "Ausgewaehlte Projekte in Enterprise SaaS, UX-Redesign, mobilen Apps und konversationeller KI.",
+    sec_certifications_label: "Nachweise",
+    sec_certifications_title: "Zertifikate",
+    sec_certifications_sub:   "Kontinuierliche Weiterbildung in KI, Testing, UX, Agile und digitaler Strategie.",
+    sec_publication_label:    "Forschung",
+    sec_publication_title:    "Publikation",
+    sec_publication_sub:      "Begutachtete Forschung an der Schnittstelle von HCI, Nachhaltigkeit und globaler Designausbildung.",
+    sec_leadership_label:     "Engagement",
+    sec_leadership_title:     "Fuehrung und ECA",
+    sec_leadership_sub:       "Internationale Fuehrungserfahrung, MUN-Konferenzen, professionelle Mitgliedschaften und Gemeinschaftsbeitrag auf fuenf Kontinenten.",
+    sec_volunteering_label:   "Gemeinschaft",
+    sec_volunteering_title:   "Ehrenamt",
+    sec_volunteering_sub:     "Beitrag durch offenes Wissen, Behindertenunterstuetzung, globale Jugendprogramme und kulturellen Austausch.",
+    sec_awards_label:         "Ehrungen",
+    sec_awards_title:         "Auszeichnungen und Ehrungen",
+    sec_awards_sub:           "Anerkennung fuer akademische Exzellenz, Fuehrung und internationale Beitraege.",
+    sec_languages_label:      "Sprachen",
+    sec_languages_title:      "Sprachkenntnisse",
+    sec_languages_sub:        "Mehrsprachiger Kommunikator mit professioneller Fliessenheit in fuenf Sprachen.",
+    sec_contact_label:        "Kontakt",
+    sec_contact_title:        "Kontakt aufnehmen",
+    sec_contact_sub:          "Offen fuer QA-Engineering-, UX-Research- und HCAI-Stellen in Deutschland und international.",
+
+    // --- PUBLICATION ---
+    pub_venue:  "HCI International 2024 - Konferenzband",
+    pub_title:  "Die Rolle von HCI im Kapitalozaen - Erkenntnisse aus einem globalen HCI-Masterkurs",
+    pub_desc:   "Diese Arbeit untersucht, wie HCI-Bildung das Kapitalozaen adressieren kann, indem Nachhaltigkeit, Ethik und globale Perspektiven in HCI-Masterkurse eingebettet werden. Basierend auf institutionsubergreifenden Lehrerfahrungen in mehreren Laendern werden Erkenntnisse und Designempfehlungen fuer kuenftige HCI-Lehrplaene vorgestellt.",
+    pub_link:   "Anzeigen unter DOI: 10.21428/bf6fb269.67a8d057",
+
+    // --- SKILLS ---
+    skill1_title: "QA und Testing",
+    skill1_desc:  "End-to-End-Tests, manuell, explorativ, Regression, UAT, API-Testing, Testmanagement und Defektlebenszyklus.",
+    skill2_title: "UX und UI-Design",
+    skill2_desc:  "Nutzerforschung, Wireframing, Prototyping, Usability-Tests, Interaktionsdesign und menschzentriertes Design.",
+    skill3_title: "KI und Forschung",
+    skill3_desc:  "HCAI-Forschung, generative KI-Integration, KI-gestuetztes Testing, verantwortungsvolle KI und Mensch-KI-Interaktionsdesign.",
+    skill4_title: "DevOps und Entwicklung",
+    skill4_desc:  "CI/CD-Pipelines, Linux-Umgebungen, RPA-Workflows, Frontend-Entwicklung und DevSecOps-Prozesse.",
+    skill5_title: "Forschung und Analyse",
+    skill5_desc:  "Qualitative und quantitative Forschung, Nutzerinterviews, Datenanalyse, Journey Mapping und Persona-Entwicklung.",
+    skill6_title: "Sprachen",
+    skill6_desc:  "Mehrsprachiger Fachmann fuer effektive interkulturelle Zusammenarbeit in Deutschland und international.",
+
+    // --- LANGUAGES ---
+    lang1: "Bengalisch",  lang1_level: "Muttersprache",
+    lang2: "Englisch",    lang2_level: "Fliessend - IELTS zertifiziert",
+    lang3: "Deutsch",     lang3_level: "Mittelstufe - B2",
+    lang4: "Chinesisch",  lang4_level: "Grundkenntnisse",
+    lang5: "Portugiesisch", lang5_level: "Grundkenntnisse",
+
+    // --- CONTACT ---
+    contact_status: "Offen fuer Angebote",
+    contact_location: "Deutschland",
+
+    // --- FOOTER ---
+    footer_name: "Shakhawat Hossain Shuvoraj - Software QA und UX Ingenieur"
+  }
+
+};
