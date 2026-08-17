@@ -5,8 +5,9 @@
 // complete site DOM.
 // Note: data/organizations.js provides window.LEADERSHIP (unified
 // leadership roles + organization memberships, impact-ordered).
-// Assets: upload your logo as assets/logo.jpg and a portrait as
-// assets/profile.jpg - both are picked up automatically.
+// Assets: hero portrait loads assets/profile.jpg; if you upload a
+// transparent cutout as assets/profile.png it is used instead.
+// Topbar logo: upload assets/logo.jpg to replace the text logo.
 // ============================================================
 
 (function () {
@@ -28,8 +29,9 @@
   }
   function applyLang() {
     const btn = $("#lang-btn");
-    if (btn) btn.textContent = lang === "en" ? "🇩🇪 DE" : "🇬🇧 EN";
+    if (btn) btn.textContent = lang === "en" ? "DE" : "EN";
     document.documentElement.setAttribute("lang", lang === "en" ? "en" : "de");
+    renderDrawerLinks();
     build();
   }
 
@@ -39,15 +41,18 @@
       : "";
   }
 
-  // ── TOPBAR ─────────────────────────────────────────────
-  function buildTopbar() {
-    const navItems = [
-      ["experience", "🧑‍💻"], ["education", "🎓"], ["skills", "🛠️"],
-      ["projects", "🚀"], ["certifications", "📜"], ["publication", "📄"],
-      ["leadership", "🌐"], ["volunteering", "🤝"],
-      ["awards", "🏅"], ["languages", "💬"], ["contact", "📬"],
-    ];
-    const drawerLinks = navItems
+  // ── NAV DRAWER ─────────────────────────────────────────
+  const NAV_ITEMS = [
+    ["experience", "🧑‍💻"], ["education", "🎓"], ["skills", "🛠️"],
+    ["projects", "🚀"], ["certifications", "📜"], ["publication", "📄"],
+    ["leadership", "🌐"], ["volunteering", "🤝"],
+    ["awards", "🏅"], ["languages", "💬"], ["contact", "📬"],
+  ];
+
+  function renderDrawerLinks() {
+    const nav = $(".drawer-nav");
+    if (!nav) return;
+    nav.innerHTML = NAV_ITEMS
       .map(
         ([k, icon]) =>
           `<a class="drawer-link" href="#${k}" onclick="closeDrawer()">
@@ -56,7 +61,10 @@
           </a>`
       )
       .join("");
+  }
 
+  // ── TOPBAR ─────────────────────────────────────────────
+  function buildTopbar() {
     document.body.insertAdjacentHTML(
       "afterbegin",
       `<header class="topbar">
@@ -77,9 +85,10 @@
       </header>
       <nav class="drawer" id="drawer" aria-label="Navigation">
         <div class="drawer-title">NAVIGATION</div>
-        <div class="drawer-nav">${drawerLinks}</div>
+        <div class="drawer-nav"></div>
       </nav>`
     );
+    renderDrawerLinks();
     applyTheme();
     applyLang();
   }
@@ -132,7 +141,6 @@
       .join("");
     return `
     <section class="hero" id="top">
-      <div class="hero-photo" aria-hidden="true"></div>
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-left">
@@ -151,18 +159,10 @@
             <div class="hero-metrics">${kpis}</div>
           </div>
           <div class="hero-right">
-            <div class="hero-card">
-              <div class="hero-card-top">
-                <span>${t("hero_card_period")}</span>
-                <span>▶ Active</span>
-              </div>
-              <h3>${t("hero_card_role")}</h3>
-              <p>${t("hero_card_org")}</p>
-              <div class="mini-list">
-                <div class="mini-item"><b>${t("hero_card_f1b")}</b><span>${t("hero_card_f1s")}</span></div>
-                <div class="mini-item"><b>${t("hero_card_f2b")}</b><span>${t("hero_card_f2s")}</span></div>
-                <div class="mini-item"><b>${t("hero_card_f3b")}</b><span>${t("hero_card_f3s")}</span></div>
-              </div>
+            <div class="portrait-wrap">
+              <div class="portrait-bg" aria-hidden="true"></div>
+              <img class="portrait-img" src="assets/profile.jpg" alt="Md Shakhawat Hossain"
+                   onerror="if(!this.dataset.png){this.dataset.png=1;this.src='assets/profile.png';}else{this.closest('.portrait-wrap').style.display='none';}">
             </div>
           </div>
         </div>
@@ -435,7 +435,7 @@
       },
       { threshold: 0.07 }
     );
-    document.querySelectorAll(".card,.tl-body,.cert-card,.pub-card,.lang-card,.contact-item,.metric,.hero-card").forEach((el) => {
+    document.querySelectorAll(".card,.tl-body,.cert-card,.pub-card,.lang-card,.contact-item,.metric,.portrait-wrap").forEach((el) => {
       el.style.opacity = 0;
       el.style.transform = "translateY(20px)";
       el.style.transition = "opacity 0.45s ease, transform 0.45s ease";
