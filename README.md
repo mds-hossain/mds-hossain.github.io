@@ -1,6 +1,6 @@
 # mds-hossain.github.io
 
-Personal portfolio website for Md Shakhawat Hossain.
+This is my personal website for hosted on GitHub Pages.
 Built as a single-page application using vanilla HTML, CSS, and JavaScript.
 No frameworks or build tools required.
 
