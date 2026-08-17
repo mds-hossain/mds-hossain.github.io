@@ -37,9 +37,8 @@ window.TRANSLATIONS = {
 
     // --- HERO ---
     hero_eyebrow:   "Available for opportunities",
-    hero_h1a:       "Md",
-    hero_h1b:       "Shakhawat",
-    hero_h1c:       "Hossain",
+    hero_h1a:       "Shakhawat Hossain",
+    hero_h1b:       "Shuvoraj",
     hero_lead:      "Software QA and UX Engineer with a research background in Human-Computer Interaction and AI. Building reliable, user-centered digital products across Germany and beyond.",
     hero_btn1:      "Get in touch",
     hero_btn2:      "View experience",
@@ -133,7 +132,7 @@ window.TRANSLATIONS = {
     contact_location: "Germany",
 
     // --- FOOTER ---
-    footer_name: "Md Shakhawat Hossain - Software QA and UX Engineer"
+    footer_name: "Shakhawat Hossain Shuvoraj - Software QA and UX Engineer"
   },
 
   de: {
@@ -165,9 +164,8 @@ window.TRANSLATIONS = {
 
     // --- HERO ---
     hero_eyebrow:   "Offen fuer neue Moeglichkeiten",
-    hero_h1a:       "Md",
-    hero_h1b:       "Shakhawat",
-    hero_h1c:       "Hossain",
+    hero_h1a:       "Shakhawat Hossain",
+    hero_h1b:       "Shuvoraj",
     hero_lead:      "Software QA- und UX-Ingenieur mit Forschungshintergrund in Mensch-Computer-Interaktion und KI. Entwicklung zuverlaessiger, nutzerzentrierter digitaler Produkte in Deutschland und weltweit.",
     hero_btn1:      "Kontakt aufnehmen",
     hero_btn2:      "Erfahrung ansehen",
@@ -261,7 +259,7 @@ window.TRANSLATIONS = {
     contact_location: "Deutschland",
 
     // --- FOOTER ---
-    footer_name: "Md Shakhawat Hossain - Software QA und UX Ingenieur"
+    footer_name: "Shakhawat Hossain Shuvoraj - Software QA und UX Ingenieur"
   }
 
 };

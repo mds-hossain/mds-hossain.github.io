@@ -147,8 +147,7 @@
             <div class="eyebrow">${t("hero_eyebrow")}</div>
             <h1>
               <span class="grad">${t("hero_h1a")}</span><br>
-              ${t("hero_h1b")}<br>
-              ${t("hero_h1c")}
+              ${t("hero_h1b")}
             </h1>
             <p class="lead">${t("hero_lead")}</p>
             <div class="hero-actions">
@@ -160,7 +159,7 @@
           <div class="hero-right">
             <div class="portrait-wrap">
               <div class="portrait-bg" aria-hidden="true"></div>
-              <img class="portrait-img" src="assets/profile.png" alt="Md Shakhawat Hossain"
+              <img class="portrait-img" src="assets/profile.png" alt="Shakhawat Hossain Shuvoraj"
                    onerror="if(!this.dataset.jpg){this.dataset.jpg=1;this.src='assets/profile.jpg';this.classList.add('is-photo');}else{this.closest('.portrait-wrap').style.display='none';}">
             </div>
           </div>
