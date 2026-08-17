@@ -156,7 +156,6 @@
               <a href="#experience" class="btn secondary">${t("hero_btn2")}</a>
               <a href="https://github.com/mds-hossain" target="_blank" rel="noopener" class="btn secondary">${t("hero_btn3")}</a>
             </div>
-            <div class="hero-metrics">${kpis}</div>
           </div>
           <div class="hero-right">
             <div class="portrait-wrap">
@@ -166,6 +165,7 @@
             </div>
           </div>
         </div>
+        <div class="hero-metrics">${kpis}</div>
       </div>
     </section>`;
   }
