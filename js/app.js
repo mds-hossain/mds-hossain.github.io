@@ -3,6 +3,7 @@
 // Reads TRANSLATIONS, EXPERIENCE, EDUCATION, CERTIFICATIONS,
 // PROJECTS, AWARDS, VOLUNTEERING, ORGANIZATIONS from data/*.js
 // and renders the complete site DOM.
+// Note: ORGANIZATIONS data is rendered inside the Leadership section.
 // ============================================================
 
 (function () {
@@ -40,7 +41,7 @@
     const navItems = [
       ["experience", "🧑‍💻"], ["education", "🎓"], ["skills", "🛠️"],
       ["projects", "🚀"], ["certifications", "📜"], ["publication", "📄"],
-      ["leadership", "🌐"], ["volunteering", "🤝"], ["organizations", "🏛️"],
+      ["leadership", "🌐"], ["volunteering", "🤝"],
       ["awards", "🏅"], ["languages", "💬"], ["contact", "📬"],
     ];
     const drawerLinks = navItems
@@ -280,9 +281,9 @@
     );
   }
 
-  // ── LEADERSHIP ─────────────────────────────────────────
+  // ── LEADERSHIP (includes Organizations) ────────────────
   function buildLeadership() {
-    const items = [
+    const ldrCards = [
       {
         icon: "🌐",
         title: t("ldr1_title"),
@@ -309,7 +310,22 @@
         </div>`
       )
       .join("");
-    return sec("leadership", `<div class="grid-2">${items}</div>`);
+    const orgCards = ORGANIZATIONS.map(
+      (o) => `
+      <div class="card">
+        <div class="card-icon">${o.icon}</div>
+        <h3>${o.role[lang] || o.role.en}</h3>
+        <div class="org-label">${o.name}</div>
+        <div class="period-label">${o.period}</div>
+        <p class="card-desc">${o.desc[lang] || o.desc.en}</p>
+      </div>`
+    ).join("");
+    return sec(
+      "leadership",
+      `<div class="grid-2" style="margin-bottom:2.2rem;">${ldrCards}</div>
+       <h3 style="font-size:1.05rem;letter-spacing:-0.02em;margin-bottom:1rem;">${t("ldr_orgs_heading")}</h3>
+       <div class="grid-3">${orgCards}</div>`
+    );
   }
 
   // ── VOLUNTEERING ───────────────────────────────────────
@@ -328,21 +344,6 @@
     return sec("volunteering", `<div class="grid-3">${items}</div>`, true);
   }
 
-  // ── ORGANIZATIONS ──────────────────────────────────────
-  function buildOrganizations() {
-    const items = ORGANIZATIONS.map(
-      (o) => `
-      <div class="card">
-        <div class="card-icon">${o.icon}</div>
-        <h3>${o.role[lang] || o.role.en}</h3>
-        <div class="org-label">${o.name}</div>
-        <div class="period-label">${o.period}</div>
-        <p class="card-desc">${o.desc[lang] || o.desc.en}</p>
-      </div>`
-    ).join("");
-    return sec("organizations", `<div class="grid-3">${items}</div>`);
-  }
-
   // ── AWARDS ─────────────────────────────────────────────
   function buildAwards() {
     const items = AWARDS.map(
@@ -353,7 +354,7 @@
         <p class="card-desc">${a.desc[lang] || a.desc.en}</p>
       </div>`
     ).join("");
-    return sec("awards", `<div class="grid-3">${items}</div>`, true);
+    return sec("awards", `<div class="grid-3">${items}</div>`);
   }
 
   // ── LANGUAGES ──────────────────────────────────────────
@@ -375,7 +376,7 @@
         </div>`
       )
       .join("");
-    return sec("languages", `<div class="lang-grid">${cards}</div>`);
+    return sec("languages", `<div class="lang-grid">${cards}</div>`, true);
   }
 
   // ── CONTACT ────────────────────────────────────────────
@@ -396,7 +397,7 @@
         </div>`
       )
       .join("");
-    return sec("contact", `<div class="contact-grid">${grid}</div>`, true);
+    return sec("contact", `<div class="contact-grid">${grid}</div>`);
   }
 
   // ── FOOTER ─────────────────────────────────────────────
@@ -433,7 +434,6 @@
       buildPublication() +
       buildLeadership() +
       buildVolunteering() +
-      buildOrganizations() +
       buildAwards() +
       buildLanguages() +
       buildContact() +
